@@ -11,7 +11,7 @@ import asyncio
 import requests
 import subprocess
 
-import core as helper
+from core import send_vid, download_video, download
 from utils import progress_bar
 from vars import API_ID, API_HASH, BOT_TOKEN
 from aiohttp import ClientSession
@@ -176,7 +176,7 @@ async def account_login(bot: Client, m: VJ):
                 cc1 = f'**[📁] Pdf_ID:** {str(count).zfill(3)}. {𝗻𝗮𝗺𝗲𝟭}{MR}.pdf \n**𝔹ᴀᴛᴄʜ** » **{raw_text0}**'
                 if "drive" in url:
                     try:
-                        ka = await helper.download(url, name)
+                        ka = await download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id, document=ka, caption=cc1)
                         count+=1
                         os.remove(ka)
@@ -201,10 +201,10 @@ async def account_login(bot: Client, m: VJ):
                 else:
                     Show = f"**⥥ 🄳🄾🅆🄽🄻🄾🄰🄳🄸🄽🄶 🄱🅈 🅃🄴🄲🄷 🅅🄹 ⬇️⬇️... »**\n\n**📝Name »** `{name}\n❄Quality » {raw_text2}`\n\n**🔗URL »** `{url}`"
                     prog = await m.reply_text(Show)
-                    res_file = await helper.download_video(url, cmd, name)
+                    res_file = await download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
-                    await helper.send_vid(bot, m, cc, filename, thumb, name, prog)
+                    await send_vid(bot, m, cc, filename, thumb, name, prog)
                     count += 1
                     time.sleep(1)
 
