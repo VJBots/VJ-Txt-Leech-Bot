@@ -1,3 +1,7 @@
+# Don't Remove Credit Tg - @VJ_Botz
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Ask Doubt on telegram @KingVJ01
+
 import requests
 import json
 import subprocess
@@ -28,8 +32,14 @@ TechVJ = Client("bot", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
 
 @TechVJ.on_message(filters.command(["start"])& ~filters.edited)
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text("Hello im txt file downloader\nPress /pyro to download links listed in a txt file in the format **Name:link**\n\nBot made by BATMAN")
-
+    button = [[
+        InlineKeyboardButton("🤖 ᴜᴘᴅᴀᴛᴇ", url="https://t.me/VJ_Botz"),
+        InlineKeyboardButton("🔍 sᴜᴘᴘᴏʀᴛ", url="https://t.me/VJ_Bot_Disscussion")
+    ],[
+        InlineKeyboardButton("👨‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ 👨‍💻", url="https://t.me/KingVJ01")
+    ]]
+    await bot.send_message(chat_id=m.from_user.id, text=f"<b>Hello {m.from_user.mention} 👋</b>\n\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File On Telegram So Basically If You Want To Use Me First Send Me /upload Command And Then Follow The Few Steps.. And Cancel Task By - /stop or /cancel\n\n<b>Powered By : @VJ_Botz</b>", reply_markup=InlineKeyboardMarkup(button))
+    
 @TechVJ.on_message(filters.command(["cancel"]))
 async def cancel(_, m):
     editable = await m.reply_text("Canceling All process Plz wait")
