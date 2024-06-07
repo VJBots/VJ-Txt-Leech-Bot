@@ -133,9 +133,9 @@ async def account_login(bot: Client, m: VJ):
     else:
         thumb == "no"
 
-    if len(links) == 1:
+    if raw_text == '0':
         count = 1
-    else:
+    else:       
         count = int(raw_text)
 
     try:
