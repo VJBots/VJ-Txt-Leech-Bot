@@ -36,7 +36,7 @@ async def account_login(bot: Client, m: VJ):
     ],[
         InlineKeyboardButton("👨‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ 👨‍💻", url="https://t.me/KingVJ01")
     ]]
-    await bot.send_message(f"<b>Hello {m.from_user.mention} 👋</b>\n\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File On Telegram So Basically If You Want To Use Me First Send Me /upload Command And Then Follow The Few Steps..\n\n<b>Powered By : @VJ_Botz</b>", reply_markup=InlineKeyboardMarkup(button))
+    await bot.send_message(chat_id=m.from_user.id, text=f"<b>Hello {m.from_user.mention} 👋</b>\n\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File On Telegram So Basically If You Want To Use Me First Send Me /upload Command And Then Follow The Few Steps..\n\n<b>Powered By : @VJ_Botz</b>", reply_markup=InlineKeyboardMarkup(button))
 
 
 @TechVJ.on_message(filters.command("stop"))
