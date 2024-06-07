@@ -203,7 +203,7 @@ async def account_login(bot: Client, m: VJ):
                     prog = await m.reply_text(Show)
                     res_file = await download_video(url, cmd, name)
                     filename = res_file
-                    await prog.delete(True)
+                 #   await prog.delete(True)
                     await send_vid(bot, m, cc, filename, thumb, name, prog)
                     count += 1
                     time.sleep(1)
