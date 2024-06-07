@@ -134,7 +134,7 @@ async def account_login(bot: Client, m: VJ):
         count = int(raw_text)
 
     try:
-        for i in range(count - 1, len(links)):
+        for i in range(min(count, len(links))):
 
             V = links[i][1].replace("file/d/","uc?export=download&id=").replace("www.youtube-nocookie.com/embed", "youtu.be").replace("?modestbranding=1", "").replace("/view?usp=sharing","") # .replace("mpd","m3u8")
             url = "https://" + V
@@ -210,7 +210,7 @@ async def account_login(bot: Client, m: VJ):
                 continue
 
     except Exception as e:
-        await m.reply_text(e)
+        await m.reply_text(f"<b>Tech VJ Said Error:</b> {e}")
     await m.reply_text("**𝔻ᴏɴᴇ 𝔹ᴏ𝕤𝕤 😎**")
 
 
