@@ -53,7 +53,7 @@ async def stop_handler(_, m):
     await m.reply_text("**Stopped 🚏**", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-@TechVJ.on_message(filters.command(["upload"])& ~filters.edited)
+@TechVJ.on_message(filters.command(["upload"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("Send txt file**")
     input: Message = await bot.listen(editable.chat.id)
@@ -362,7 +362,7 @@ async def account_login(bot: Client, m: Message):
     
     
     
-@TechVJ.on_message(filters.command(["jw"])&  ~filters.edited)
+@TechVJ.on_message(filters.command(["jw"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("Send txt file**")
     input: Message = await bot.listen(editable.chat.id)
