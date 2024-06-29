@@ -517,4 +517,4 @@ async def account_login(bot: Client, m: Message):
         await m.reply_text(e)
     await m.reply_text("Done")     
     
-bot.run()
+TechVJ.run()
