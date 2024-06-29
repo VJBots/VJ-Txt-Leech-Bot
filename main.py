@@ -309,7 +309,7 @@ async def account_login(bot: Client, m: Message):
                 if cmd == "pdf" or "drive" in url:
                     try:
                         ka=await helper.download(url,name)
-                        await prog.delete (True)
+                        await prog.delete(True)
                         time.sleep(1)
                         # await helper.send_doc(bot,m,cc,ka,cc1,prog,count,name)
                         reply = await m.reply_text(f"Uploading - `{name}`")
@@ -317,7 +317,7 @@ async def account_login(bot: Client, m: Message):
                         start_time = time.time()
                         await m.reply_document(ka,caption=cc1)
                         count+=1
-                        await reply.delete (True)
+                        await reply.delete(True)
                         time.sleep(1)
                         os.remove(ka)
                         time.sleep(3)
@@ -328,7 +328,7 @@ async def account_login(bot: Client, m: Message):
                 elif cmd == "pdf" or ".pdf" in url:
                     try:
                         ka=await helper.aio(url,name)
-                        await prog.delete (True)
+                        await prog.delete(True)
                         time.sleep(1)
                         reply = await m.reply_text(f"Uploading - ```{name}```")
                         time.sleep(1)
@@ -336,7 +336,7 @@ async def account_login(bot: Client, m: Message):
                         await m.reply_document(ka, caption=f'**Title »** {name1} {res}.pdf\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}')
                         count+=1
                         # time.sleep(1)
-                        await reply.delete (True)
+                        await reply.delete(True)
                         time.sleep(1)
                         os.remove(ka)
                         time.sleep(3)
@@ -487,7 +487,7 @@ async def account_login(bot: Client, m: Message):
                     filename = f"{name}.pdf"  
 #                 filename = f"{name}.mkv"
                 subprocess.run(f'ffmpeg -i "{filename}" -ss 00:01:00 -vframes 1 "{filename}.jpg"', shell=True)
-                await prog.delete (True)
+                await prog.delete(True)
                 reply = await m.reply_text(f"Uploading - ```{name}```")
                 try:
                     if thumb == "no":
