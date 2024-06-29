@@ -30,7 +30,7 @@ import os
 
 TechVJ = Client("bot", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
 
-@TechVJ.on_message(filters.command(["start"])& ~filters.edited)
+@TechVJ.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
     button = [[
         InlineKeyboardButton("🤖 ᴜᴘᴅᴀᴛᴇ", url="https://t.me/VJ_Botz"),
