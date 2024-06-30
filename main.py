@@ -31,7 +31,7 @@ import os
 TechVJ = Client("bot", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
 
 @TechVJ.on_message(filters.command(["start"]))
-async def account_login(bot: Client, m: Message):
+async def start(bot: Client, m: Message):
     button = [[
         InlineKeyboardButton("🤖 ᴜᴘᴅᴀᴛᴇ", url="https://t.me/VJ_Botz"),
         InlineKeyboardButton("🔍 sᴜᴘᴘᴏʀᴛ", url="https://t.me/VJ_Bot_Disscussion")
@@ -54,13 +54,13 @@ async def stop_handler(_, m):
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 @TechVJ.on_message(filters.command(["upload"]))
-async def account_login(bot: Client, m: Message):
+async def upload(bot: Client, m: Message):
     editable = await m.reply_text("Send txt file**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
 
-    path = f"./downloads/{m.chat.id}"
+    path = f"./downloads/{str(m.chat.id)}"
 
     try:    
         with open(x, "r") as f:
@@ -363,13 +363,13 @@ async def account_login(bot: Client, m: Message):
     
     
 @TechVJ.on_message(filters.command(["jw"]))
-async def account_login(bot: Client, m: Message):
+async def jw(bot: Client, m: Message):
     editable = await m.reply_text("Send txt file**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
 
-    path = f"./downloads/{m.chat.id}"
+    path = f"./downloads/{str(m.chat.id)}"
 
     try:    
         with open(x, "r") as f:
@@ -404,7 +404,7 @@ async def account_login(bot: Client, m: Message):
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
 
-    editable4= await m.reply_text("Now send the **Thumb url**\nEg : ```https://telegra.ph/file/d9e24878bd4aba05049a1.jpg```\n\nor Send **no**")
+    editable4= await m.reply_text("Now send the **Thumb url**\nEg : `https://telegra.ph/file/d9e24878bd4aba05049a1.jpg`\n\nor Send **no**")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
 
