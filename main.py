@@ -465,7 +465,7 @@ async def jw(bot: Client, m: Message):
             else:
                 url1 = url
 
-                
+            filename = None  
             name = f'{str(count).zfill(3)}) {name1}'    
             Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url1}`"
             prog = await m.reply_text(Show)
