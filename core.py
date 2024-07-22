@@ -23,7 +23,7 @@ def duration(filename):
                              "default=noprint_wrappers=1:nokey=1", filename],
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT)
-    return float(result.stdout.decode('utf-8'))
+    return float(result.stdout)
     
 def exec(cmd):
         process = subprocess.run(cmd, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
@@ -204,12 +204,12 @@ async def send_vid(bot: Client, m: Message,cc,filename,thumb,name,prog):
     except Exception as e:
         await m.reply_text(str(e))
 
-    dur = int(duration(filename))
+   # dur = int(duration(filename))
 
     start_time = time.time()
 
     try:
-        await m.reply_video(filename,caption=cc, supports_streaming=True,height=720,width=1280,thumb=thumbnail,duration=dur, progress=progress_bar,progress_args=(reply,start_time))
+        await m.reply_video(filename,caption=cc, supports_streaming=True,height=720,width=1280,thumb=thumbnail, progress=progress_bar,progress_args=(reply,start_time))
     except Exception:
         await m.reply_document(filename,caption=cc, progress=progress_bar,progress_args=(reply,start_time))
     os.remove(filename)
