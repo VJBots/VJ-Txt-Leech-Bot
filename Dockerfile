@@ -1,10 +1,10 @@
-FROM ubuntu:latest
-RUN apt-get update -y && apt-get upgrade -y \
-    && apt-get install -y --no-install-recommends gcc libffi-dev musl-dev ffmpeg aria2 python3-pip \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+FROM python:3.10.8-slim-buster
 
-COPY . /app/
-WORKDIR /app/
+
+WORKDIR .
+RUN apt -qq update && apt -qq install -y git wget pv jq python3-dev ffmpeg mediainfo
+COPY . .
 RUN pip3 install -r requirements.txt
+RUN apt install ffmpeg
+
 CMD gunicorn app:app & python3 main.py
