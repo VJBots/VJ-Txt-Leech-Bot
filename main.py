@@ -31,7 +31,7 @@ bot = Client(
 
 @bot.on_message(filters.command(["start"]))
 async def start(bot: Client, m: Message):
-    editable = await m.reply_text("**ℍɪɪ** ┈━═My Freind═━┈😎\n\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File Om Telegram So Basically If You Want To Use Me First Send Me /upload Command And Then Follow Few Steps..")
+    await m.reply_text("**ℍɪɪ** ┈━═My Freind═━┈😎\n\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File On Telegram So Basically If You Want To Use Me First Send Me /upload Command And Then Follow Few Steps..")
 
 
 @bot.on_message(filters.command("stop"))
