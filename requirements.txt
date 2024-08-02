@@ -1,4 +1,4 @@
-async-lru==2.0.2
+async-lru==2.0.
 certifi==2023.5.7
 charset-normalizer==3.1.0
 idna==3.4
