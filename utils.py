@@ -17,7 +17,6 @@ class Timer:
 
 from datetime import datetime,timedelta
 
-#lets do calculations
 def hrb(value, digits= 2, delim= "", postfix=""):
     """Return a human-readable file size.
     """
@@ -66,7 +65,6 @@ def hrt(seconds, precision = 0):
 
 timer = Timer()
 
-# Powered By Ankush
 async def progress_bar(current, total, reply, start):
     if timer.can_send():
         now = time.time()
@@ -92,7 +90,7 @@ async def progress_bar(current, total, reply, start):
             progress_bar = "▰" * completed_length + "▱" * remaining_length
             
             try:
-                await reply.edit(f'\n `╭──⌯════🆄︎ᴘʟᴏᴀᴅɪɴɢ⬆️⬆️═════⌯──╮ \n├⚡ {progress_bar}|﹝{perc}﹞ \n├🚀 Speed » {sp} \n├📟 Processed » {cur}\n├🧲 Size - ETA » {tot} - {eta} \n├🤖𝔹ʏ » Md Matin Ashraf\n╰─═══ ✪ @Matiz_Techz ✪ ═══─╯\n`') 
+                await reply.edit(f'<b>\n ╭──⌯════🆄︎ᴘʟᴏᴀᴅɪɴɢ⬆️⬆️═════⌯──╮ \n├⚡ {progress_bar}|﹝{perc}﹞ \n├🚀 Speed » {sp} \n├📟 Processed » {cur}\n├🧲 Size - ETA » {tot} - {eta} \n├🤖 𝔹ʏ » @VJ_Botz\n╰─═══ ✪ @VJ_Botz ✪ ═══─╯\n</b>') 
             except FloodWait as e:
                 time.sleep(e.x)
 
