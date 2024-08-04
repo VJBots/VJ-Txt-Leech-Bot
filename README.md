@@ -5,7 +5,7 @@
   VJ TXT LEECH BOT
 </h1>
 
-## Deploy Tutorial - [Video Link](https://youtube.com/@Tech_VJ)
+## Deploy Tutorial - [Video Link](https://youtu.be/l1u3C_F79QE)
 
 ## Credit
 
