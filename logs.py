@@ -1,6 +1,6 @@
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit Tg - ASTRONAUT
+# Subscribe TELEGRAM Channel For Amazing Bot @ASTRONAUT_OFFICIAL_2
+# Ask Doubt on telegram @Astronaut_OFFICIAL_2 
 
 import logging
 from logging.handlers import RotatingFileHandler
