@@ -54,7 +54,7 @@ def download_video(url: str) -> str:
         return None
 
 def main() -> None:
-    updater = Updater(API_TOKEN)
+    updater = Updater(8159353352:AAEE07s669LtlhOclmZS_x3qXADM1NqXKTA)
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler("start", start))
