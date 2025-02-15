@@ -5,8 +5,8 @@ import requests
 import re
 import os
 
-TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN'
-ADMIN_ID = 'YOUR_ADMIN_ID'
+TOKEN = '8159353352:AAEE07s669LtlhOclmZS_x3qXADM1NqXKTA'
+ADMIN_ID = '2093417522'
 
 def start(update: Update, context: CallbackContext):
     update.message.reply_text(" 🗃️ Send me a TXT file ")
