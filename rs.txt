@@ -4,7 +4,7 @@ import requests
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
-API_TOKEN = 'YOUR_API_TOKEN'
+API_TOKEN = '8159353352:AAEE07s669LtlhOclmZS_x3qXADM1NqXKTA'
 
 def start(update: Update, context: CallbackContext) -> None:
     update.message.reply_text('Send me a TXT file with video links.')
@@ -37,7 +37,7 @@ def download_video(link: str) -> None:
         print(f'Failed to download {link}: {e}')
 
 def main() -> None:
-    updater = Updater(API_TOKEN)
+    updater = Updater(8159353352:AAEE07s669LtlhOclmZS_x3qXADM1NqXKTA)
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler("start", start))
