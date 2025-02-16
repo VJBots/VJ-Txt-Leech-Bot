@@ -1,0 +1,58 @@
+from telegram import Update, Bot
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
+from moviepy.editor import VideoFileClip
+import requests
+import re
+import os
+
+TOKEN = '8159353352:AAEE07s669LtlhOclmZS_x3qXADM1NqXKTA'
+ADMIN_ID = '2093417522'
+
+def start(update: Update, context: CallbackContext):
+    update.message.reply_text(" 🗃️ Send me a TXT file ")
+
+def handle_document(update: Update, context: CallbackContext):
+    file = update.message.document.get_file()
+    file.download('links.txt')
+    
+    with open('links.txt', 'r') as f:
+        links = f.readlines()
+    
+    os.remove('links.txt')
+    
+    for link in links:
+        video_url = link.strip()
+        response = requests.get(video_url)
+        video_path = 'video.mp4'
+        
+        with open(video_path, 'wb') as file:
+            file.write(response.content)
+        
+        # Process video (e.g., resize and add thumbnail)
+        video_clip = VideoFileClip(video_path)
+        resized_video_path = 'resized_video.mp4'
+        video_clip.resize(newsize=(1280, 720)).write_videofile(resized_video_path)
+        
+        # Send video to user
+        update.message.reply_video(open(resized_video_path, 'rb'))
+        
+        # Send video to admin
+        bot = Bot(token=TOKEN)
+        bot.send_video(chat_id=ADMIN_ID, video=open(resized_video_path, 'rb'))
+
+        # Clean up
+        os.remove(video_path)
+        os.remove(resized_video_path)
+
+def main():
+    updater = Updater(TOKEN, use_context=True)
+    dp = updater.dispatcher
+    
+    dp.add_handler(CommandHandler('start', start))
+    dp.add_handler(MessageHandler(Filters.document.mime_type("text/plain"), handle_document))
+    
+    updater.start_polling()
+    updater.idle()
+
+if __name__ == '__main__':
+    main()
