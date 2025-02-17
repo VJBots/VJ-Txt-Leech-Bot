@@ -4,6 +4,9 @@
 
 from os import environ
 
-API_ID = int(environ.get("API_ID", "22182189"))
-API_HASH = environ.get("API_HASH", "5e7c4088f8e23d0ab61e29ae11960bf5")
-BOT_TOKEN = environ.get("BOT_TOKEN", "")
+BOT_NAME = "demotbot"
+API_ID    = 28088290
+API_HASH  = "6998f2c585fdce65ac72dfa23d02b6ec"
+BOT_TOKEN = ""
+#MONGO_URI = "mongodb+srv://psrathore1155:<db_password>@cluster0.rpaat.mongodb.net/"
+MONGO_URI = "mongodb+srv://tusartxt7570:K1AVnnJlDceZBiRY>@cluster0.78fhl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
