@@ -1,0 +1,65 @@
+
+{
+
+    "name": "Leech Bot",
+
+    "description": "A Modular telegram bot.",
+
+    "repository": "https://github.com/",
+    "buildpacks":[
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+        },
+        {
+            "url": "https://github.com/amivin/aria2-heroku.git"
+        },
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "keywords": [
+
+       
+
+        "telegram bot",
+
+        "pyrogram"
+
+    ],
+
+    "env": {
+
+        "BOT_TOKEN": {
+
+            "description": "Your Bot token from @Botfather"
+
+        },
+
+        "API_ID": {
+
+            "description": "Your API_ID from https://my.telegram.org/apps"
+
+        },
+
+        "API_HASH": {
+
+            "description": "Your API_HASH from https://my.telegram.org/apps"
+
+        }
+
+    },
+
+    "buildpacks": [
+
+        {
+
+            "url": "heroku/python"
+
+        },
+       {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+        }
+
+    ]
+
+}
